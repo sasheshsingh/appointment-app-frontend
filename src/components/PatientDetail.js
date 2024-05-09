@@ -34,7 +34,7 @@ const PatientDetail = () => {
   console.log(params, "params", searchParams);
 
   const getAppointments = async (id) => {
-    fetch(`http://13.49.133.63/api/appointment?patient_id=${id}`)
+    fetch(`https://appointment-backend.sasheshsingh.com/api/appointment?patient_id=${id}`)
       .then((resp) => resp.json())
       .then((results) => {
         console.log(results, "results");
@@ -46,7 +46,7 @@ const PatientDetail = () => {
   const getData = async (status) => {
     const user = localStorage.getItem("user");
     fetch(
-      `http://13.49.133.63/api/patients/${params?.id}?user_id=${user}&status=${
+      `https://appointment-backend.sasheshsingh.com/api/patients/${params?.id}?user_id=${user}&status=${
         status ? status : ""
       }`
     )
@@ -65,15 +65,15 @@ const PatientDetail = () => {
     const time = dayjs(data?.date).format("HH:MM");
     try {
       const resp = await axios.post(
-        "http://13.49.133.63/api/appointment",
+        "https://appointment-backend.sasheshsingh.com/api/appointment",
         {
           date,
           time,
           status: "pending",
           patient: params?.id,
           amount: data?.amount,
-          success_url: `http://localhost:3000/patient/${params?.id}?success=true`,
-          failure_url: `http://localhost:3000/patient/${params?.id}?success=false`,
+          success_url: `https://appointment.sasheshsingh.com/patient/${params?.id}?success=true`,
+          failure_url: `https://appointment.sasheshsingh.com/patient/${params?.id}?success=false`,
         },
         {
           headers: { "Content-Type": "application/json" },

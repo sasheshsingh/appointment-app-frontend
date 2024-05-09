@@ -14,7 +14,7 @@ const PatientsTable = () => {
   const getData = async () => {
     const user = localStorage.getItem("user");
 
-    fetch(`http://13.49.133.63/api/patients?user_id=${user}&search=${search}`)
+    fetch(`https://appointment-backend.sasheshsingh.com/api/patients?user_id=${user}&search=${search}`)
       .then((resp) => resp.json())
       .then((results) => {
         setPatients({ data: results }); // No need to spread the results array here
@@ -27,7 +27,7 @@ const PatientsTable = () => {
 
     data["user"] = user;
     try {
-      const resp = await axios.post("http://13.49.133.63/api/patients", data, {
+      const resp = await axios.post("https://appointment-backend.sasheshsingh.com/api/patients", data, {
         headers: { "Content-Type": "application/json" },
       });
       setAddPatient(false);
