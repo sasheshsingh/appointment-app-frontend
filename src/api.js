@@ -1,21 +1,33 @@
-import axios from 'axios';
+import axios from "axios";
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = `http://13.49.133.63/`;
 
 const api = axios.create({
   baseURL: BASE_URL,
   headers: {
-    'Content-Type': 'multipart/form-data',
+    "Content-Type": "multipart/form-data",
   },
 });
 
 export const login = async (email, password) => {
   try {
-    const response = await api.post('/api/login', {
+    const response = await api.post("/api/login", {
       username: email,
-      password: password
+      password: password,
     });
-    return response.data.access_token;
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const signUp = async (email, password) => {
+  try {
+    const response = await api.post("/api/signup", {
+      username: email,
+      email: email,
+      password: password,
+    });
+    return response.data;
   } catch (error) {
     throw error;
   }

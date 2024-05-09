@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import queryString from 'query-string'
 import {useHistory, useLocation, useParams} from "react-router-dom";
 import {HELPERS} from "../utils/helper";
-import API_MANAGER from "../API/index.js";
+import {API_MANAGER} from "../API/index.js";
 // import { LoginSuccess } from "../../context/AuthActions";
 // import { AuthContext } from "../../context/AuthContext";
 

@@ -1,8 +1,8 @@
 import {HELPERS} from "../utils/helper";
 
-export const baseURL = process.env.REACT_APP_ENV_SNOWFIG;
+const baseURL = process.env.REACT_APP_ENV_SNOWFIG;
 
-const API_MANAGER = {
+export const API_MANAGER = {
     MicrosoftSsoLogin: (params) => {
         return HELPERS.request({
           baseURL,
@@ -13,5 +13,3 @@ const API_MANAGER = {
         });
     }
 }
-
-export default API_MANAGER
