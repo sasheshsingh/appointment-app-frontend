@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Node version required version v18.12.1. Ref [https://sasheshsingh.medium.com/installing-node-js-using-nvm-a-step-by-step-guide-43dccca2bf4e](https://sasheshsingh.medium.com/installing-node-js-using-nvm-a-step-by-step-guide-43dccca2bf4e) for downloading instructions
+
+### npm install 
 
 ## Available Scripts
 
